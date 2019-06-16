@@ -2,6 +2,7 @@ const express = require('express');
 const webSocket = require('ws');
 const http = require('http');
 const bodyParser = require('body-parser');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -12,7 +13,7 @@ const config = require('./config');
 
 const openWebSocket = new webSocketServer({server});
 
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
 
 // For parsing application/json and parsing application/x-www-form-urlencoded
 app.use(bodyParser.json());
