@@ -1,33 +1,30 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
+const http = require('http');
+const WebSocket = require('ws');
 
 const app = express();
-const port = process.env.PORT || 5000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+//initialize a simple http server
+const server = http.createServer(app);
 
-// API calls
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
+//initialize the WebSocket server instance
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', (ws) => {
+
+    //connection is up, let's add a simple simple event
+    ws.on('message', (message) => {
+
+        //log the received message and send it back to the client
+        console.log('received: %s', message);
+        ws.send(`Hello, you sent -> ${message}`);
+    });
+
+    //send immediatly a feedback to the incoming connection    
+    ws.send('Hi there, I am a WebSocket server');
 });
 
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+//start our server
+server.listen(process.env.PORT || 8999, () => {
+    console.log(`Server started on port ${server.address().port} :)`);
 });
-
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-    
-  // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-}
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
