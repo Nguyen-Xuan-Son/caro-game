@@ -1,0 +1,14 @@
+.square-item {
+	background: #738ba3;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+	border: solid #babdbf 0.5px;
+    font-weight: 600;
+}
+
+.square-item:hover {
+	background: #334d65;
+	cursor: pointer;
+}

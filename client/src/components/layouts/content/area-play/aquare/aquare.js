@@ -12,8 +12,8 @@ class Aquare extends Component {
 
   	render() {
     	return (
-      		<div className="square-item" onClick={() => {console.log(1)}}>
-      			1
+      		<div className="square-item">
+                O
       		</div>
     	);
   	}

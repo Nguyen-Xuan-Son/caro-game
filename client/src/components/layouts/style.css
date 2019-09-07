@@ -1,0 +1,42 @@
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    background: #825959;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    background: #93b3b3;
+    height: 10%;
+}
+
+.content {
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content > div:nth-child(1) {
+    width: 20%;
+    background: #bbb3a8;
+}
+
+.content > div:nth-child(2) {
+    width: 60%;
+    background: #babdbf;
+}
+
+.content > div:nth-child(3) {
+    width: 20%;
+}
+
+.footer {
+    background: #e8dac7;
+    height: 5%;
+}

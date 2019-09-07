@@ -1,0 +1,20 @@
+.square-board-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: default;
+}
+
+.square-board-container > div:first-child {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.square-board-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.square-line-item {
+	display: flex;
+}
