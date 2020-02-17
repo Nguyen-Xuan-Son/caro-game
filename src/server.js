@@ -19,12 +19,10 @@ wss.on('connection', (ws) => {
         console.log('received: %s', message);
         ws.send(`Hello, you sent -> ${message}`);
     });
-
-    //send immediatly a feedback to the incoming connection    
+    //send immediatly a feedback to the incoming connection
     ws.send('Hi there, I am a WebSocket server');
 });
 
-//start our server
-server.listen(process.env.PORT || 8999, () => {
+server.listen(process.env.PORT || 9000, () => {
     console.log(`Server started on port ${server.address().port} :)`);
 });

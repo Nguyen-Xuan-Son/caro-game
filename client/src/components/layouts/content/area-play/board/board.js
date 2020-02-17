@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aquare from './../aquare/aquare.js';
+import Square from '../square/square.js';
 
 import './board.css';
 
@@ -19,7 +19,7 @@ class Board extends Component {
 				let arrTempChildren = [];
 
 				for (let j = 0; j < width; j++) {
-					arrTempChildren.push(<Aquare key={j}/>);
+					arrTempChildren.push(<Square key={j}/>);
 				}
 
 				arrTempParent.push(
@@ -28,7 +28,7 @@ class Board extends Component {
 				 	</div>
 				);
 			}
-		}
+		};
 
 		if (Number(chessBoardSize.height) && Number(chessBoardSize.width)) {
 			executeChessBoardSize(Number(chessBoardSize.height), Number(chessBoardSize.width));
