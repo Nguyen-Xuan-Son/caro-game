@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ChooseAquareNumber extends Component {
+class ChooseAquareNumber extends React.Component {
 
 	constructor(props) {
 		super(props);

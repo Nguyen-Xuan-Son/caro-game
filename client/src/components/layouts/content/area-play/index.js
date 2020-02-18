@@ -14,7 +14,9 @@ class AreaPlay extends Component {
 	}
 
     handleAquareNumberChessboard(e) {
-        this.setState({...e});
+        this.setState({...e}, () => {
+			console.log("this.state", this.state);
+		});
     }
 
   	render() {

@@ -12,8 +12,6 @@ class App extends React.Component {
 		};
 
 		subscribeToTimer((err, timestamp) => {
-			console.log("err", err);
-			console.log("timestamp", timestamp);
 			this.setState({
 				timestamp
 			});
@@ -26,9 +24,6 @@ class App extends React.Component {
 	render() {
     	return (
 	      	<React.Fragment>
-				<p className="App-intro">
-					This is the timer value: {this.state.timestamp}
-				</p>
 		        <Layouts />
 	      	</React.Fragment>
     	);
