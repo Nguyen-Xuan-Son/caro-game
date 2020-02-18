@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserHistory extends Component {
+class UserHistory extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -10,9 +10,9 @@ class UserHistory extends Component {
 
   	render() {
     	return (
-      		<React.Fragment>
+      		<>
       			User history
-      		</React.Fragment>
+      		</>
     	);
   	}
 }

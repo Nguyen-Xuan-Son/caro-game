@@ -13,12 +13,9 @@ class Square extends Component {
 	}
 
 	handleTicSquare() {
-		// console.log("handleTicSquare");
 	}
 
   	render() {
-		// console.log("this.props", this.props);
-
     	return (
       		<div className="square-item"
 				onClick={this.handleTicSquare}
