@@ -1,5 +1,5 @@
 import React from 'react';
-import { subscribeToTimer } from './services/socket-io';
+import { subscribeToTimer } from './socket.io';
 import Layouts from './components/layouts';
 
 class App extends React.Component {

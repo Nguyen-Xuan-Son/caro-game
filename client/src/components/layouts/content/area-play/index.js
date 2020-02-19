@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Board from './board/board.js'
 import ChooseAquareNumber from './choose-aquare-number';
+import {setSizeBoard} from '../../../../socket.io';
 
-class AreaPlay extends Component {
+class AreaPlay extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -14,8 +15,8 @@ class AreaPlay extends Component {
 	}
 
     handleAquareNumberChessboard(e) {
-        this.setState({...e}, () => {
-			console.log("this.state", this.state);
+		this.setState({...e}, () => {
+			setSizeBoard(this.state);
 		});
     }
 

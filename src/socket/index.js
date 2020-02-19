@@ -9,6 +9,8 @@ const initSocketIO = (server) => {
                 ws.emit('timer', new Date().getSeconds());
             }, 1000);
         });
+
+        require('./setSizeBoard')(ws);
     });
 };
 
