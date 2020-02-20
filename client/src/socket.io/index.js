@@ -1,5 +1,6 @@
 import openSocket from 'socket.io-client';
-import setSizeBoard from "./setSizeBoard";
+import setSizeBoard from './setSizeBoard';
+
 const socket = openSocket('http://localhost:9000');
 
 function subscribeToTimer(cb) {
@@ -7,9 +8,9 @@ function subscribeToTimer(cb) {
     socket.emit('subscribeToTimer', 1000);
 }
 
-setSizeBoard(socket);
+const setSizeBoardUse = setSizeBoard(socket);
 
 export {
     subscribeToTimer,
-    setSizeBoard
+    setSizeBoardUse
 };

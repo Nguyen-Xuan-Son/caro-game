@@ -2,7 +2,7 @@ import React from 'react';
 
 import Board from './board/board.js'
 import ChooseAquareNumber from './choose-aquare-number';
-import {setSizeBoard} from '../../../../socket.io';
+import {setSizeBoardUse} from '../../../../socket.io';
 
 class AreaPlay extends React.Component {
 
@@ -16,7 +16,7 @@ class AreaPlay extends React.Component {
 
     handleAquareNumberChessboard(e) {
 		this.setState({...e}, () => {
-			setSizeBoard(this.state);
+			setSizeBoardUse(this.state);
 		});
     }
 
