@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './style.css';
+import {receivedMessageUse, sendMessageUse} from '../../../../socket.io';
 
 class ChatAllRight extends Component {
 
@@ -16,11 +17,19 @@ class ChatAllRight extends Component {
 		this.handleShowMessage = this.handleShowMessage.bind(this);
 	}
 
-	sendMessage() {
-		// todo handle send message
+	componentDidMount() {
+		receivedMessageUse(message => {
+			const messages = this.state.messages;
+			messages.push(message);
+			this.setState({
+				messages
+			});
+		})
+	}
 
+	sendMessage() {
 		const messages = this.state.messages;
-		messages.push(this.state.message);
+		sendMessageUse(this.state.message);
 		this.setState({
 			messages,
 			message: ''
