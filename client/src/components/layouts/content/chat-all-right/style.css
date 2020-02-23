@@ -2,10 +2,12 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    height: 100%;
 }
 
 .content-container {
     background: #6fb396;
+    height: 100%;
 }
 
 .message-item {
