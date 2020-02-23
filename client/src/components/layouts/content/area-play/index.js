@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Board from './board/board.js'
-import ChooseAquareNumber from './choose-aquare-number';
+import ChooseSquareNumber from './choose-square-number';
 import {setSizeBoardUse} from '../../../../socket.io';
 
 class AreaPlay extends React.Component {
@@ -11,10 +11,10 @@ class AreaPlay extends React.Component {
 
 		this.state = {};
 
-        this.handleAquareNumberChessboard = this.handleAquareNumberChessboard.bind(this);
+        this.handleSquareNumberChessboard = this.handleSquareNumberChessboard.bind(this);
 	}
 
-    handleAquareNumberChessboard(e) {
+    handleSquareNumberChessboard(e) {
 		this.setState({...e}, () => {
 			setSizeBoardUse(this.state);
 		});
@@ -23,7 +23,7 @@ class AreaPlay extends React.Component {
   	render() {
     	return (
       		<React.Fragment>
-                <ChooseAquareNumber setUpAquareNumber={this.handleAquareNumberChessboard}/>
+                <ChooseSquareNumber setUpSquareNumber={this.handleSquareNumberChessboard}/>
                 <Board chessBoardSize={this.state}/>
       		</React.Fragment>
     	);

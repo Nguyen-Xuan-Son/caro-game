@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ChooseAquareNumber extends React.Component {
+class ChooseSquareNumber extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -12,8 +12,8 @@ class ChooseAquareNumber extends React.Component {
 
         this.handleInputHeight = this.handleInput.bind(this, 'height');
         this.handleInputWidth = this.handleInput.bind(this, 'width');
-        this.resetAquareNumber = this.resetAquareNumber.bind(this);
-        this.setUpAquareNumber = this.setUpAquareNumber.bind(this);
+        this.resetSquareNumber = this.resetSquareNumber.bind(this);
+        this.setUpSquareNumber = this.setUpSquareNumber.bind(this);
         this.setFullScreen = this.setFullScreen.bind(this);
 	}
 
@@ -23,16 +23,16 @@ class ChooseAquareNumber extends React.Component {
         });
     }
 
-    setUpAquareNumber() {
-        this.props.setUpAquareNumber(this.state);
+    setUpSquareNumber() {
+        this.props.setUpSquareNumber(this.state);
     }
 
-    resetAquareNumber() {
+    resetSquareNumber() {
         this.setState({
             height: '',
             width: ''
         },() => {
-            this.props.setUpAquareNumber(this.state);
+            this.props.setUpSquareNumber(this.state);
         });
     }
 
@@ -41,14 +41,14 @@ class ChooseAquareNumber extends React.Component {
             height: 40,
             width: 40
         },() => {
-            this.props.setUpAquareNumber(this.state);
+            this.props.setUpSquareNumber(this.state);
         });
     }
 
   	render() {
     	return (
       		<div>
-                <div>Choose aquare number</div>
+                <div>Choose Square number</div>
                 <div>
                     <div>Height</div>
                     <div>
@@ -73,12 +73,12 @@ class ChooseAquareNumber extends React.Component {
                 </div>
                 <div>
                     <button type="button" onClick={this.setFullScreen}>Full screen</button>
-                    <button type="button" onClick={this.setUpAquareNumber}>Setup</button>
-                    <button type="button" onClick={this.resetAquareNumber}>Reset</button>
+                    <button type="button" onClick={this.setUpSquareNumber}>Setup</button>
+                    <button type="button" onClick={this.resetSquareNumber}>Reset</button>
                 </div>
       		</div>
     	);
   	}
 }
 
-export default ChooseAquareNumber;
+export default ChooseSquareNumber;

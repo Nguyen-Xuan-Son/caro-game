@@ -7,12 +7,24 @@ class Square extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {};
+		this.state = {
+			isShowTicO : true,
+			isShowTic: false
+		};
 
 		this.handleTicSquare = this.handleTicSquare.bind(this);
+		this.showTicContent = this.showTicContent.bind(this);
 	}
 
 	handleTicSquare() {
+		this.setState({
+			isShowTic: true,
+			isShowTicO: !this.state.isShowTicO
+		});
+	}
+
+	showTicContent() {
+		return this.state.isShowTic ? this.state.isShowTicO ? 'O' : 'X' : '';
 	}
 
   	render() {
@@ -20,7 +32,7 @@ class Square extends Component {
       		<div className="square-item"
 				onClick={this.handleTicSquare}
 			>
-                O
+				{this.showTicContent()}
       		</div>
     	);
   	}

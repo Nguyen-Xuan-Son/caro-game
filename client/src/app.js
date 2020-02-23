@@ -1,6 +1,6 @@
 import React from 'react';
-import { subscribeToTimer } from './socket.io';
 import Layouts from './components/layouts';
+import {userConnectUse, statusPeopleUse} from './socket.io';
 
 class App extends React.Component {
 
@@ -10,15 +10,11 @@ class App extends React.Component {
 		this.state = {
 			timestamp: null
 		};
-
-		subscribeToTimer((err, timestamp) => {
-			this.setState({
-				timestamp
-			});
-		});
 	}
 
 	componentDidMount() {
+		userConnectUse(null);
+		statusPeopleUse();
 	}
 
 	render() {

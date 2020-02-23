@@ -1,0 +1,19 @@
+.container-chat-area {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content-container {
+    background: #6fb396;
+}
+
+.action-container {
+    background: #738ba3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-container div {
+    padding: 5px;
+}
