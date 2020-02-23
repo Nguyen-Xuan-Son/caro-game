@@ -8,6 +8,14 @@
     background: #6fb396;
 }
 
+.message-item {
+    display: flex;
+}
+
+.message-item div:last-child {
+    padding-left: 5px;
+}
+
 .action-container {
     background: #738ba3;
     display: flex;

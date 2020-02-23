@@ -36,7 +36,8 @@ class ChatAllRight extends Component {
 	handleShowMessage() {
 		return this.state.messages.map((message, index) => {
 			return (
-				<div key={index}>
+				<div className="message-item"
+					key={index}>
 					<div>Nguyen Thi Mai: </div>
 					<div>{message}</div>
 				</div>
@@ -60,6 +61,7 @@ class ChatAllRight extends Component {
 						</div>
 						<div>
 							<button type="button"
+									disabled={!this.state.message}
 									onClick={this.sendMessage}
 									>Send</button>
 						</div>
