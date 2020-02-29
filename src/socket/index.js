@@ -5,7 +5,7 @@ const initSocketIO = (server) => {
         console.log('Socket connected');
         require('./setSizeBoard')(ws);
         require('./userConnect')(ws);
-        require('./message')(ws);
+        require('./message')(io, ws);
     });
 };
 
