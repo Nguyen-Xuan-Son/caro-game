@@ -1,4 +1,5 @@
 import React, { Component } from'react';
+import popup from '../../../untils/popup';
 
 class Header extends Component {
 
@@ -9,10 +10,21 @@ class Header extends Component {
 	}
 
   	render() {
+
+		const component = () => {
+			return (
+				<div>
+					<div>Popup content here !!</div>
+					<button>abc</button>
+				</div>
+			)
+		};
+
     	return (
-      		<React.Fragment>
+      		<>
       			Header
-      		</React.Fragment>
+				{popup(component(), 'abc')}
+      		</>
     	);
   	}
 }
