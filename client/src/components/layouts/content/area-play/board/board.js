@@ -2,12 +2,28 @@ import React, { Component } from 'react';
 import Square from '../square/square.js';
 
 import './board.css';
+import {receivedCoordinatesUse} from '../../../../../socket.io';
 
 class Board extends Component {
 
 	constructor(props) {
 		super(props);
 		this.handleChessBoardSize = this.handleChessBoardSize.bind(this);
+
+		this.state = {
+			coordinatesSelected: {
+				x: null,
+				y: null
+			}
+		};
+	}
+
+	componentDidMount() {
+		receivedCoordinatesUse(coordinates => {
+			this.setState({
+				coordinatesSelected: coordinates
+			})
+		})
 	}
 
 	handleChessBoardSize() {
@@ -19,7 +35,12 @@ class Board extends Component {
 				let arrTempChildren = [];
 
 				for (let j = 0; j < width; j++) {
-					arrTempChildren.push(<Square key={j}/>);
+
+					if (i === this.state.coordinatesSelected.x && j === this.state.coordinatesSelected.y) {
+						arrTempChildren.push(<Square coordinatesSelected={true} coordinates={{x: i, y: j}} key={j}/>);
+					} else {
+						arrTempChildren.push(<Square coordinates={{x: i, y: j}} key={j}/>);
+					}
 				}
 
 				arrTempParent.push(

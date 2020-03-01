@@ -6,6 +6,7 @@ const initSocketIO = (server) => {
         require('./setSizeBoard')(ws);
         require('./userConnect')(ws);
         require('./message')(io, ws);
+        require('./handleCoordinates')(io, ws);
     });
 };
 
