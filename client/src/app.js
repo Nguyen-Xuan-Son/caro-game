@@ -1,6 +1,7 @@
 import React from 'react';
 import Layouts from './components/layouts';
 import {userConnectUse, statusPeopleUse} from './socket.io';
+import {NotificationContainer} from 'react-notifications';
 
 class App extends React.Component {
 
@@ -20,6 +21,7 @@ class App extends React.Component {
 	render() {
     	return (
 	      	<React.Fragment>
+				<NotificationContainer />
 		        <Layouts />
 	      	</React.Fragment>
     	);
