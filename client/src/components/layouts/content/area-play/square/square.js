@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './square.css';
-import {sendCoordinatesUse} from '../../../../../socket.io';
+import { sendCoordinatesUse } from '../../../../../socket.io';
 
 class Square extends Component {
 
@@ -9,34 +9,32 @@ class Square extends Component {
 		super(props);
 
 		this.state = {
-			isShowTicO : true,
-			isShowTic: false
+			showType: '',
+			showTypeO: 'O',
+			showTypeX: 'X'
 		};
 
 		this.handleTicSquare = this.handleTicSquare.bind(this);
-		this.showTicContent = this.showTicContent.bind(this);
 	}
 
 	handleTicSquare() {
 		this.setState({
-			isShowTic: true,
-			isShowTicO: !this.state.isShowTicO
+			showType: this.state.showTypeO
 		}, () => {
-			sendCoordinatesUse(this.props.coordinates);
+			sendCoordinatesUse({
+					coordinates: this.props.coordinates,
+					showType: this.state.showType
+				}
+			);
 		});
 	}
 
-	showTicContent(isShowTic, isShowTicO) {
-		return isShowTic ? isShowTicO ? 'O' : 'X' : '';
-	}
-
   	render() {
-
     	return (
       		<div className="square-item"
 				onClick={this.handleTicSquare}
 			>
-				{this.showTicContent(this.state.isShowTic || this.props.coordinatesSelected, this.state.isShowTicO)}
+				{this.props.ticType}
       		</div>
     	);
   	}
