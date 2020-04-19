@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Square from '../square/square.js';
 
 import './board.css';
-import { receivedCoordinatesUse } from '../../../../../socket.io';
+import { receivedCoordinatesUse } from '../../../../socket.io';
 
 class Board extends Component {
 

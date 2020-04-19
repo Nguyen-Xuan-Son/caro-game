@@ -2,7 +2,7 @@ import React from 'react';
 
 import Board from './board/board.js'
 import ChooseSquareNumber from './choose-square-number';
-import {setSizeBoardUse} from '../../../../socket.io';
+import {setSizeBoardUse} from '../../../socket.io';
 
 class AreaPlay extends React.Component {
 

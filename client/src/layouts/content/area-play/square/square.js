@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './square.css';
-import { sendCoordinatesUse } from '../../../../../socket.io';
+import { sendCoordinatesUse } from '../../../../socket.io';
 
 class Square extends Component {
 

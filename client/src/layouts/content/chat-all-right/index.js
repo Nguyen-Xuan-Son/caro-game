@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './style.css';
-import {receivedMessageUse, sendMessageUse} from '../../../../socket.io';
+import {receivedMessageUse, sendMessageUse} from '../../../socket.io';
 
 class ChatAllRight extends Component {
 

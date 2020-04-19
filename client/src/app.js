@@ -1,5 +1,5 @@
 import React from 'react';
-import Layouts from './components/layouts';
+import Layouts from './layouts';
 import {userConnectUse, statusPeopleUse} from './socket.io';
 import {NotificationContainer} from 'react-notifications';
 

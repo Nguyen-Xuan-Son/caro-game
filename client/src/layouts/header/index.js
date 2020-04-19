@@ -1,5 +1,5 @@
 import React, { Component } from'react';
-import popup from '../../../untils/popup';
+import popup from '../../untils/popup';
 
 class Header extends Component {
 
