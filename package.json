@@ -6,6 +6,7 @@
   "scripts": {
     "client": "react-scripts start",
     "start": "node src/server.js",
+    "build": "react-scripts build",
     "server": "nodemon src/server.js",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
@@ -30,7 +31,6 @@
     "concurrently": "^4.1.2",
     "nodemon": "^1.19.4"
   },
-
   "eslintConfig": {
     "extends": "react-app"
   },
